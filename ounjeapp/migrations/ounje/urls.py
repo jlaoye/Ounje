@@ -1,4 +1,4 @@
-"""foodtasker URL Configuration
+"""ounje URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -14,18 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.conf.urls import url
-from django.urls import path, include
-from ounjeapp import views
-from django.contrib.auth import views as auth_views
-from django.views.generic.base import TemplateView # new
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-#    path('', views.home, name='home'),
-
-    path('accounts/', include('django.contrib.auth.urls')),
-
-    path('', views.merchant_home, name='merchant_home'),
-
 ]
