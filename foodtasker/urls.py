@@ -21,11 +21,17 @@ from django.contrib.auth import views as auth_views
 from django.views.generic.base import TemplateView # new
 
 urlpatterns = [
+    path('', views.home, name='home'),
     path('admin/', admin.site.urls),
-#    path('', views.home, name='home'),
 
-    path('accounts/', include('django.contrib.auth.urls')),
 
-    path('', views.merchant_home, name='merchant_home'),
+
+    #path('accounts/', include('django.contrib.auth.urls')),
+
+    path('merchant/', views.merchant_home,
+        {'template_name': 'merchant/home.html'},
+        name ='merchant_home'),
+#    path('', views.merchant_home, name='merchant_home'),
+    #path('merchant/sign-in/', views.merchant_signin),
 
 ]
