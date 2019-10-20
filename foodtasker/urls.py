@@ -19,19 +19,23 @@ from django.urls import path, include
 from ounjeapp import views
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import TemplateView # new
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
 
+    #path('/merchant/sign-in', views.merchant_signin,
+    #    name = 'merchant_signin'),
 
-
-    #path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 
     path('merchant/', views.merchant_home,
-        {'template_name': 'merchant/home.html'},
         name ='merchant_home'),
 #    path('', views.merchant_home, name='merchant_home'),
-    #path('merchant/sign-in/', views.merchant_signin),
+     path('signup/', views.restaurant_signUp, name='restaurant_signUp'),
+        #name ='merchant_logout'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
