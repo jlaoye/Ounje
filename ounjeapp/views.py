@@ -51,7 +51,7 @@ def restaurant_signUp(request):
         user_form = UserForm(request.POST)
         restaurant_form = MerchantForm(request.POST, request.FILES)
 
-        if user_form.is_valid() and merchant_form.is_valid():
+        if user_form.is_valid() and restaurant_form.is_valid():
             new_user = User.objects.create_user(**user_form.cleaned_data)
             new_restaurant = merchant_form.save(commit=False)
             new_restaurant.user = new_user

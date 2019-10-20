@@ -78,16 +78,16 @@ WSGI_APPLICATION = 'foodtasker.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-DATABASE_URL = os.environ['DATABASE_URL']
+#DATABASE_URL = os.environ['DATABASE_URL']
 
-conn = psycopg2.connect(DATABASE_URL, sslmode='require'
+#conn = psycopg2.connect(DATABASE_URL, sslmode='require'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2'
-        'NAME': os.path.join(BASE_DIR, 'Ounje'),
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2'
+        #'NAME': os.path.join(BASE_DIR, 'Ounje'),
     }
 }
 
